@@ -27,7 +27,6 @@
 		array1[21]="Valle d'Aosta";
 			
 		var num=1;
-		var num1=num;
 			
 		function Controlla(e)
 		{
@@ -67,16 +66,7 @@
 			element.setAttribute('style', 'hover: yellow');
 			});
 			
-			do
-			{
-				do
-				{
-					do
-					{
-						num = Math.round(Math.random()*100)
-					}while(num==num1);	
-				}while(num<1);	
-			}while(num>22);
+			num = Math.floor(Math.random()*20);
 			document.getElementById("Regione-Da-Indovinare").textContent = array1[num]
 		}
 	</script>
