@@ -33,10 +33,10 @@
 		{
 			if(e.target.id==document.getElementById("Regione-Da-Indovinare").textContent)
 			{
-				alert("Ottimo Lavoro!")
 				Punteggio++;
 				document.getElementById("Punteggio_Counter").textContent = Punteggio;
 				e.target.setAttribute('style', 'fill: green');
+				alert("Ottimo Lavoro!")
 				Cambia();
 				
 			}
@@ -57,6 +57,8 @@
 			element.setAttribute('style', 'fill: blue');
 			element.setAttribute('style', 'hover: yellow');
 			});
+			
+			Cambia();
 		}
 		function Cambia()
 		{
