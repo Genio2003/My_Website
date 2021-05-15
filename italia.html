@@ -2,29 +2,16 @@
 <html>
 	<script>
 		var Punteggio=0;
+		array1=[];
+
+		document.addEventListener("DOMContentLoaded", updateGUI )
 		
-		array1=new Array;
-		array1[0]="Lazio";
-		array1[1]="Abruzzo";
-		array1[2]="Calabria";
-		array1[3]="Campania";
-		array1[4]="Basilicata";
-		array1[5]="Emilia-Romagna";
-		array1[6]="Friuli-Venezia Giulia";
-		array1[7]="Liguria";
-		array1[8]="Lombardia";
-		array1[9]="Marche";
-		array1[10]="Molise";
-		array1[11]="Piemonte";
-		array1[12]="Puglia";
-		array1[13]="Sardegna";
-		array1[14]="Sicilia";
-		array1[15]="Toscana";
-		array1[16]="Trentino Alto Adige (P.A. Trento)";
-		array1[17]="Trentino Alto Adige (P.A. Bolzano)";
-		array1[18]="Umbria";
-		array1[19]="Veneto";
-		array1[20]="Valle d'Aosta";
+		function updateGUI(){
+			Array.from(document.getElementsByTagName('path')).forEach(element => {
+				array1.push( element.id );
+			});
+			document.getElementById("Regione-Da-Indovinare").textContent = array1[ 1 ];
+		}
 			
 		var num=1;
 			
