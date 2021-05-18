@@ -9,6 +9,7 @@
 			var chiaveDiSessione; 
 			var AlicePublicKey;
 			var BobPublicKey ;
+			var tipoFunzione="somma";
 			
 			
 			document.addEventListener("DOMContentLoaded", inizializzaGame );
@@ -19,7 +20,7 @@
 				
 				//qui è dove Diffie Helmann viene implementato!!
 				
-				parametroPubblico = 2; //TODO : casuale
+				parametroPubblico = 1+ Math.floor( Math.random()*9 ); //TODO : scegliere il range
 				
 				AlicePublicKey= f( parametroPubblico , AliceSecretKey );
 				BobPublicKey  = f( parametroPubblico , BobSecretKey );
@@ -54,13 +55,31 @@
 
 
 			function f ( base , chiave) {
-				return base + chiave ;
+
+				switch(tipoFunzione) {
+
+				  case "somma":
+					return base + chiave ;
+
+				  case "moltiplicazione":
+					return base * chiave ;
+				
+				  case "esponenziale":
+					return base ** chiave ;
+				  
+				/*  case 4:
+					return base ^ chiave % p ;*/
+
+				  default:
+					return base + chiave ; //solo per cautela...
+				} 
+				
 			}
 			
 			
 			function controlla(){
 				var chiaveHackerata = document.getElementById("chiaveHackerata").value ;
-				alert( "hac "+ chiaveHackerata + " sess " + chiaveDiSessione );
+				
 				if ( chiaveDiSessione==chiaveHackerata){
 					alert("GRANDE !!!!!");
 					mostra(); 
@@ -90,6 +109,12 @@
 				inizializzaGame();
 			}
 			
+			function cambiaFunzione(){
+
+				tipoFunzione=document.getElementById("selettoreFunzione").elements['funzione'].value;
+				rigioca();
+			}
+			
 	</script>
 
 		<meta charset="UTF-8">
@@ -97,6 +122,16 @@
 		<title>Sito Web Criptografia</title>
 	</head>
 	<body style="text-align: center;">
+		
+		<form  id="selettoreFunzione"  onchange="cambiaFunzione()"autocomplete="off">
+			<input type="radio" id="f1" name="funzione" value="somma" checked >
+			<label for="f1">funzione 1 </label>
+			<input type="radio" id="f2" name="funzione" value="moltiplicazione">
+			<label for="f2">funzione 2</label>
+			<input type="radio" id="f3" name="funzione" value="esponenziale">
+			<label for="f3">funzione 3</label>
+		</form>
+		<hr>
 		<main>
 		
 			<div style="float:left; margin-left: 50px;">
