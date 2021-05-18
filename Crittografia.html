@@ -1,9 +1,97 @@
 <!DOCTYPE html>
 <html>
-	<script>
-		
-	</script>
 	<head>
+	<script>
+			//variabili globali 
+			var AliceSecretKey ; 
+			var BobSecretKey ;
+			var parametroPubblico;
+			var chiaveDiSessione; 
+			var AlicePublicKey;
+			var BobPublicKey ;
+			
+			
+			document.addEventListener("DOMContentLoaded", inizializzaGame );
+			
+			function inizializzaGame(){
+				AliceSecretKey = 1+ Math.floor( Math.random()*9 ); //TODO : scegliere il range
+				BobSecretKey = 1+ Math.floor( Math.random()*9 ); //TODO : scegliere il range
+				
+				//qui è dove Diffie Helmann viene implementato!!
+				
+				parametroPubblico = 2; //TODO : casuale
+				
+				AlicePublicKey= f( parametroPubblico , AliceSecretKey );
+				BobPublicKey  = f( parametroPubblico , BobSecretKey );
+				
+				// Calcolo della chiave scambiata  
+				
+				var chiaveDiSessioneA = f(  BobPublicKey  , AliceSecretKey ) ;//Alice
+				var chiaveDiSessioneB = f( AlicePublicKey , BobSecretKey )   ;//Bob 
+				chiaveDiSessione  = chiaveDiSessioneA ;
+				// Le due chiavi sono uguali ... 
+				if ( chiaveDiSessioneA != chiaveDiSessioneB ) 
+					alert (" OH NO !!! QUESTO NON DEVE ACCADERE !!! e non accadrà mai ...");
+				
+				
+				//mostra nella UI le cose in chiaro..
+				document.getElementById("parametroPubblico").value = parametroPubblico ;
+				
+				document.getElementById("chiavePubblicaAlice").value = AlicePublicKey ;
+				document.getElementById("chiavePubblicaBob").value = BobPublicKey ;
+				
+				//cancella i contenuti delle celle da nascondere ..
+				document.getElementById("AliceSecretKey").value="";
+				document.getElementById("BobSecretKey").value="";
+				
+				document.getElementById("chiaveSessioneA").value="";
+				document.getElementById("chiaveSessioneB").value="";
+				
+				
+			
+			
+			}
+
+
+			function f ( base , chiave) {
+				return base + chiave ;
+			}
+			
+			
+			function controlla(){
+				var chiaveHackerata = document.getElementById("chiaveHackerata").value ;
+				alert( "hac "+ chiaveHackerata + " sess " + chiaveDiSessione );
+				if ( chiaveDiSessione==chiaveHackerata){
+					alert("GRANDE !!!!!");
+					mostra(); 
+				}
+				else 
+					alert ("Ritenta");
+			}
+			
+			function resa(){
+				mostra();
+			}
+			
+			function mostra(){
+				//"scopre" le chiavi private
+				document.getElementById("AliceSecretKey").value=AliceSecretKey;
+				document.getElementById("BobSecretKey").value=BobSecretKey;
+				
+				document.getElementById("chiaveSessioneA").value=chiaveDiSessione;
+				document.getElementById("chiaveSessioneB").value=chiaveDiSessione;
+				
+				
+				//"scopre" le chiavi di sessione 
+				//
+			}
+				
+			function rigioca(){
+				inizializzaGame();
+			}
+			
+	</script>
+
 		<meta charset="UTF-8">
 		<meta name="description" content="Sito Web Criptografia! ;-)">
 		<title>Sito Web Criptografia</title>
@@ -43,10 +131,13 @@
 				<p><b>Sei capace di hackerare la Chiave di Sessione di Alice ed Bob?</b></p>
 				<form>
 					<label style="width: 200px; high: 50px;"></label>
-					<input type="text">
+					<input type="text" id="chiaveHackerata">
 				</form>
-				<button style=" margin-top: 10px; display:inline-block;">Prova!</button>
-				<button style="display:inline-block;">Arrenditi...</button>
+				<button style=" margin-top: 10px; display:inline-block;"  onclick="controlla()" >Prova!</button>
+				<button style="display:inline-block;" onclick="resa()" >Arrenditi...</button>
+				<br>
+				<button style="display:inline-block;" onclick="rigioca()" >rigioca </button>
+				
 			
 			</div>
 			<div style="float:right; margin-right: 50px;">
