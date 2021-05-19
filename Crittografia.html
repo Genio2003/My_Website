@@ -124,11 +124,11 @@
 	<body style="text-align: center;">
 		
 		<form  id="selettoreFunzione"  onchange="cambiaFunzione()"autocomplete="off">
-			<input type="radio" id="f1" name="funzione" value="somma" checked >
+			<input type="radio" id="f1" name="Funzione 1" value="somma" checked >
 			<label for="f1">funzione 1 </label>
-			<input type="radio" id="f2" name="funzione" value="moltiplicazione">
+			<input type="radio" id="f2" name="Funzione 2" value="moltiplicazione">
 			<label for="f2">funzione 2</label>
-			<input type="radio" id="f3" name="funzione" value="esponenziale">
+			<input type="radio" id="f3" name="Funzione 3" value="esponenziale">
 			<label for="f3">funzione 3</label>
 		</form>
 		<hr>
@@ -141,17 +141,17 @@
 				<p><b>Alice si "inventa" una chiave privata.</b></p>
 				<form>
 					<label style="width: 200px; high: 50px;"></label>
-					<input type="text"id="AliceSecretKey" readonly >
+					<input type="text"id="AliceSecretKey" style="text-align: center;" readonly >
 				</form>
 				<p><b>Alice con la sua Chiave Privata e il Parametro Pubblico <br> calcola la sua Chiave Pubblica e la comunica in chiaro.</b></p>
 				<form>
 					<label style="width: 200px; high: 50px;"></label>
-					<input type="text" id="chiavePubblicaAlice"  readonly>
+					<input type="text" id="chiavePubblicaAlice" style="text-align: center;" readonly>
 				</form>
 				<p style="margin-top: 100px;"><b>Alice con la Chiave Pubblica di Bob calcola la Chiave di Sessione.</b></p>
 				<form>
 					<label style="width: 200px; high: 50px;"></label>
-					<input type="text" id="chiaveSessioneA" readonly>
+					<input type="text" id="chiaveSessioneA" style="text-align: center;" readonly>
 				</form>
 				
 			</div>
@@ -160,18 +160,18 @@
 				<p><b>E propone un parametro pubblico e lo cominuca in chiaro.</b></p>
 				<form>
 					<label style="width: 200px; high: 50px;"></label>
-					<input id="parametroPubblico" type="text" readonly >
+					<input id="parametroPubblico" type="text" style="text-align: center;" readonly >
 				</form>
 				<img src="Foto_Crittografia/Hacker.png" style="width: 200px; high: 240px; margin-top: 20px;">
 				<p><b>Sei capace di hackerare la Chiave di Sessione di Alice ed Bob?</b></p>
 				<form>
 					<label style="width: 200px; high: 50px;"></label>
-					<input type="text" id="chiaveHackerata">
+					<input type="text" id="chiaveHackerata" style="text-align: center;">
 				</form>
 				<button style=" margin-top: 10px; display:inline-block;"  onclick="controlla()" >Prova!</button>
 				<button style="display:inline-block;" onclick="resa()" >Arrenditi...</button>
 				<br>
-				<button style="display:inline-block;" onclick="rigioca()" >rigioca </button>
+				<button style="display:inline-block;" onclick="rigioca()" >Rigioca</button>
 				
 			
 			</div>
@@ -182,17 +182,17 @@
 				<p><b>Bob si "inventa" una chiave privata.</b></p>
 				<form>
 					<label style="width: 200px; high: 50px;"></label>
-					<input type="text" id="BobSecretKey" readonly>
+					<input type="text" id="BobSecretKey" style="text-align: center;" readonly>
 				</form>
 				<p><b>Bob con la sua Chiave Privata e il Parametro Pubblico <br> calcola la sua Chiave Pubblica e la comunica in chiaro.</b></p>
 				<form>
 					<label style="width: 200px; high: 50px;"></label>
-					<input type="text" id="chiavePubblicaBob" readonly>
+					<input type="text" id="chiavePubblicaBob" style="text-align: center;" readonly>
 				</form>
 				<p style="margin-top: 100px;"><b>Bob con la Chiave Pubblica di Alice calcola la Chiave di Sessione.</b></p>
 				<form>
 					<label style="width: 200px; high: 50px;"></label>
-					<input type="text" id="chiaveSessioneB" readonly>
+					<input type="text" id="chiaveSessioneB" style="text-align: center;" readonly>
 				</form>
 			
 			</div>
