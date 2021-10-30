@@ -25,16 +25,21 @@
 		
 		<main>
 		
-			<img src="https://media.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif" width="480" height="360"></img>
+			<img id="Gif" src="https://media.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif" width="480" height="360"></img>
 			<p>TEST!</p>
 		
 		</main>
 		
 		<footer>
-		
-			<script type="text/javascript" src="Dark_Mode.js"></script>
-			<button onclick="Switch()">Dark-Mode</button>
-			<h4>Made With <span style="color:red; font-weight: bold;">LOVE</span> By Genio2003 <span style="color:red; font-weight: bold;">|</span> Hosted By GitHub!</h4>
+			
+			<script type="text/javascript" src="Theme_Switcher.js"></script>
+			
+			<ul>
+				<li><button id="Dark_Theme_Switch" onclick="Theme_Switcher('dark_theme')">Dark_Theme</button></li>
+				<li><button id="Halloween_Theme_Switch" onclick="Theme_Switcher('halloween_theme')">Halloween_Theme</button></li>
+			</ul>
+			
+			<h4>> Made With <span id="Emoji">❤️</span> By Genio2003 <span style="color:red; font-weight: bold;">|</span> Hosted By GitHub! <</h4>
 		
 		</footer>
 		
