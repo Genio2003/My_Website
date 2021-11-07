@@ -49,6 +49,10 @@ ul li button {
 	display: block;
 }
 
+a, a:hover, a:visited, a:active {
+  color: inherit;
+ }
+
 #Figlet_Title {
 	font-weight: bold;
 }
