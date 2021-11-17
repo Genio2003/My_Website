@@ -12,14 +12,19 @@
 
 /* Default_Style*/
 
-header {
-	margin-bottom: 100px;
-}
-
 body {
 	color: black;
     background: white;
 	text-align: center;
+}
+
+header {
+	margin-bottom: 100px;
+}
+
+nav {
+	text-align: center;
+	width: 100%;
 }
 
 footer {
@@ -41,15 +46,23 @@ p {
 ul {}
 
 ul li {
-	list-style: none; 
+	list-style: none;
 	display: inline-block;
 }
 
-ul li button {
+ul li p {
+	font-family: 'IBM Plex Mono';
+	color: inherit;
+	font-weight: bold;
+	text-decoration: none;
 	display: block;
 }
 
-a, a:hover, a:visited, a:active {
+ul li p:hover {
+	text-decoration: underline;
+}
+
+.Footer_Links, .Footer_Links:hover, .Footer_Links:visited, .Footer_Links:active {
   color: inherit;
  }
 
@@ -65,12 +78,11 @@ a, a:hover, a:visited, a:active {
 }
 
 #Dark_Theme_Switch {
-	font-family:'IBM Plex Mono';
-	color:white;
-	background-color:black;
 	border-radius:8px;
 	border: 1px solid white;
 }
+
+/* - NOT IN USE! -
 
 #Halloween_Theme_Switch {
 	font-family:'IBM Plex Mono';
@@ -78,6 +90,18 @@ a, a:hover, a:visited, a:active {
 	background-color: #f56421;
 	border-radius: 8px;
 	border: 1px solid black;
+}
+
+*/
+
+/* The_Mains! */
+
+#Projects {
+	
+}
+
+#Contacts {
+	
 }
 
 /* Dark_Theme */

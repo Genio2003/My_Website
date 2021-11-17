@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="style.css">
 		<meta charset="UTF-8">
 		<meta name="description" content="Genio2003 Web-Site! ;-)">
-		<title>Genio2003 Web-Site!</title>
+		<title>🔮 Genio2003 Web-Site! 🔮</title>
 	</head>
 	<body onload="Theme_Master()">
 		
@@ -21,12 +21,43 @@
 			</td>
 		</tr>
 		<h1>Web-Site!</h1>
+		
+		<nav>
+			
+			<ul>
+			<li><a> { </a></li>
+			<li><p onclick="Content_Switcher('0')"> > Home < </p></li>
+			<li><a> | </a></li>
+			<li><p onclick="Content_Switcher('1')"> > Projects < </p></li>
+			<li><a> | </a></li>
+			<li><p onclick="Content_Switcher('2')"> > Contact < </p></li>
+			<li><a> } </a></li>
+			</ul>
+			
+		</nav>
+		
 	</header>
 		
-		<main>
+		<script type="text/javascript" src="Content_Manager.js"></script>
 		
-			<img id="Gif" src="https://media.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif" width="480" height="360"></img>
+		<main id="Home">
+		
+			<img id="Gif" src="https://media.giphy.com/media/l2JdTkHW1KZPdvdS0/giphy.gif" width="480" height="360"></img>
 			<p>TEST!</p>
+		
+		</main>
+		
+		<main id="Projects" style="display: none;">
+		
+			<img id="Gif" src="https://media.giphy.com/media/geozuBY5Y6cXm/giphy.gif" width="480" height="360"></img>
+			<p>TEST 2!</p>
+		
+		</main>
+		
+		<main id="Contacts" style="display: none;">
+		
+			<img id="Gif" src="https://media.giphy.com/media/Vk7VKS50xcSC4/giphy.gif" width="480" height="360"></img>
+			<p>TEST 3!</p>
 		
 		</main>
 		
@@ -34,12 +65,9 @@
 			
 			<script type="text/javascript" src="Theme_Switcher.js"></script>
 			
-			<ul>
-				<li><button id="Dark_Theme_Switch" onclick="Override('dark_theme')">Dark_Theme</button></li>
-				<li><button id="Halloween_Theme_Switch" onclick="Override('halloween_theme')">Halloween_Theme</button></li>
-			</ul>
+			<button id="Dark_Theme_Switch" onclick="Override('dark_theme')">🌜</button>
 			
-			<h4>> Made With <span id="Emoji">❤️</span> By <a href="https://twitter.com/MichyTheWinner"; target="_blank">Genio2003</a> <span style="color:red; font-weight: bold;">|</span> Hosted By <a href="https://github.com/Genio2003/My_Website">Github</a> <</h4>
+			<h4>> Made With <span id="Emoji">❤️</span> By <a class="Footer_Links" href="https://twitter.com/MichyTheWinner"; target="_blank">Genio2003</a> <span style="color:red; font-weight: bold;">|</span> Hosted By <a class="Footer_Links" href="https://github.com/Genio2003/My_Website">Github</a> <</h4>
 		
 		</footer>
 		

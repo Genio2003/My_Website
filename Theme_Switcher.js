@@ -19,10 +19,12 @@ function Theme_Master() {
 function Dark_Theme() {
 	element.classList.toggle("dark-theme");
 	if (element.className == 'dark-theme') {
-		document.getElementById("Halloween_Theme_Switch").style.display = "none";
+		document.getElementById("Dark_Theme_Switch").innerHTML = "🌞";
+		document.getElementById("Dark_Theme_Switch").style.backgroundColor= "#87ceeb";
 	}
 	else {
-		document.getElementById("Halloween_Theme_Switch").style.display = "inline-block";
+		document.getElementById("Dark_Theme_Switch").innerHTML = "🌜";
+		document.getElementById("Dark_Theme_Switch").style.backgroundColor= "#070058";
 	}
 }
 
