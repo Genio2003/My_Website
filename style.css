@@ -12,14 +12,30 @@
 
 /* Default_Style*/
 
+* {
+	box-sizing: border-box;
+}
+
+html {
+	margin: 0;
+	padding:0;
+	height: 100%;
+	width: 100%;
+}
+
 body {
+	margin: 0;
+	padding:0;
+	height: 100%;
 	color: black;
     background: white;
 	text-align: center;
 }
 
 header {
-	margin-bottom: 100px;
+	height: 25%;
+	display: grid;
+	place-content: center;
 }
 
 nav {
@@ -27,8 +43,14 @@ nav {
 	width: 100%;
 }
 
+.mains {
+	height: 65%;
+	display: grid;
+	place-content: center;
+}
+
 footer {
-	margin-top: 180px;
+	height: 10%;
 }
 
 h1 {
@@ -61,7 +83,9 @@ ul li a:hover {
 	font-weight: bold;
 }
 
-#Nav_UL {}
+#Nav_UL {
+	padding: 0;
+}
 
 #Nav_UL li {
 	list-style: none;
@@ -82,6 +106,14 @@ ul li a:hover {
 
 #Figlet_Title {
 	font-weight: bold;
+}
+
+#WebSite_H1 {
+	margin: 0;
+}
+
+#Projects_UL {
+	padding: 0;
 }
 
 #Emoji {
@@ -136,4 +168,24 @@ body.halloween-theme {
 	text-align: center;
 	color: #f56421;
     background: #121212;
+}
+
+/* Mobile Device Style Changes*/
+
+@media only screen and (max-width: 620px) {
+	#Figlet_Title {
+		font-size: 12px;
+	}
+	#Nav_UL li p {
+		font-size: 15px;
+	}
+	footer {
+		font-size: 12px;
+	}
+	#Emoji {
+		font-size: 13px;
+	}
+	#WebSite_H1 {
+		font-size: 20px;
+	}
 }
