@@ -35,7 +35,9 @@ body {
 header {
 	height: 25%;
 	display: grid;
+	/*
 	place-content: center;
+	*/
 }
 
 nav {
@@ -43,7 +45,7 @@ nav {
 	width: 100%;
 }
 
-.mains {
+main {
 	height: 65%;
 	display: grid;
 	place-content: center;
@@ -92,18 +94,17 @@ ul li a:hover {
 	display: inline-block;
 }
 
-#Nav_UL li p {
+#Nav_UL li a {
 	font-family: 'IBM Plex Mono';
 	color: inherit;
 	font-weight: bold;
-	text-decoration: none;
 	display: block;
 }
-
-#Nav_UL li p:hover {
+/*
+#Nav_UL li a:hover {
 	text-decoration: underline;
 }
-
+*/
 #Figlet_Title {
 	font-weight: bold;
 }
@@ -180,7 +181,7 @@ body.halloween-theme {
 	#Figlet_Title {
 		font-size: 12px;
 	}
-	#Nav_UL li p {
+	#Nav_UL li a {
 		font-size: 15px;
 	}
 	footer {
